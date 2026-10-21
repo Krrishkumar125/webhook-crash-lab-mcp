@@ -12,7 +12,7 @@ business state (for example "credits granted exactly once").
 ## Loop
 
 1. **Find the handler** (`/webhook` route, `app/api/webhooks/*/route.ts`, `constructEvent` call).
-2. **Config.** If `crash-lab.config.mjs` does not exist, run `npx webhook-crash-lab init` and fill it in:
+2. **Config.** If no `crash-lab.config.{mjs,js,ts}` exists, run `npx webhook-crash-lab init` and fill it in:
    - `target`: the local dev URL of the webhook route, or an in-process `(req: Request) => Response` handler.
    - `secret`: a **test** signing secret the handler verifies with (set it in the handler's env too).
    - `event`: a realistic event (for example `checkout.session.completed`).
