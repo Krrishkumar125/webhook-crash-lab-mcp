@@ -1,6 +1,6 @@
 {
   "name": "webhook-crash-lab",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "description": "Test webhook handlers against duplicate, concurrent, out-of-order and forged deliveries, then fix and re-run until they pass.",
   "author": { "name": "Krrish Kumar", "url": "https://github.com/Krrishkumar125" },
   "homepage": "https://github.com/Krrishkumar125/webhook-crash-lab",

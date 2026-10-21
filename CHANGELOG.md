@@ -1,5 +1,10 @@
 # Changelog
 
+## 0.2.0 (2026-10-22)
+
+- `run_crash_lab` accepts TypeScript configs (`.ts`/`.mts`/`.cts`) by delegating config loading to
+  webhook-crash-lab 0.3.0; jiti is bundled so this works on Node 20 too.
+
 ## 0.1.0 (2026-10-22)
 
 - MCP server with `run_crash_lab`, `run_demo`, `explain_report`, `list_scenarios`.

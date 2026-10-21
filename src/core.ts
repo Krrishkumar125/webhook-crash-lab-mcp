@@ -1,8 +1,8 @@
 import { existsSync, mkdirSync, readFileSync, writeFileSync } from 'node:fs';
-import { dirname, extname, isAbsolute, resolve } from 'node:path';
-import { pathToFileURL } from 'node:url';
+import { dirname, resolve } from 'node:path';
 import {
   demoConfig,
+  loadConfig as loadLabConfig,
   runCrashLab,
   SCENARIOS,
   toJson,
@@ -107,21 +107,13 @@ export interface RunOptions {
   reportPath?: string;
 }
 
+/**
+ * Load a crash-lab config (.mjs/.js/.cjs, or .ts/.mts/.cts via jiti or Node type stripping).
+ * Delegates to webhook-crash-lab so the CLI and the MCP server accept exactly the same files,
+ * and re-reads the file each call so an agent re-running after edits gets the new config.
+ */
 export async function loadConfig(configPath: string, cwd = process.cwd()): Promise<CrashLabConfig> {
-  const path = isAbsolute(configPath) ? configPath : resolve(cwd, configPath);
-  if (['.ts', '.mts', '.cts'].includes(extname(path))) {
-    throw new Error('.ts configs are not supported yet; use crash-lab.config.mjs');
-  }
-  if (!existsSync(path)) throw new Error(`Config not found: ${path}`);
-  // Cache-bust so an agent re-running after edits gets the new config.
-  const mod = (await import(`${pathToFileURL(path).href}?t=${Date.now()}`)) as {
-    default?: CrashLabConfig;
-  };
-  const config = mod.default;
-  if (!config || !config.target || typeof config.secret !== 'string' || !config.event?.id) {
-    throw new Error(`Invalid config ${path}: must export default { target, secret, event }`);
-  }
-  return config;
+  return loadLabConfig(configPath, cwd);
 }
 
 export async function runFromConfig(opts: RunOptions): Promise<Summary> {

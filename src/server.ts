@@ -10,7 +10,7 @@ import {
   type Summary,
 } from './core.js';
 
-export const VERSION = '0.1.0';
+export const VERSION = '0.2.0';
 
 const summaryShape = {
   name: z.string(),
@@ -54,7 +54,11 @@ export function createServer(): McpServer {
       description:
         'Replay hostile webhook deliveries (duplicates, concurrent duplicates, out-of-order events, forged/missing/stale signatures, malformed JSON) against the handler described by a crash-lab config file, and return structured failures with fix hints. Use a TEST database and test secret only. Create a config with `npx webhook-crash-lab init` if none exists.',
       inputSchema: {
-        configPath: z.string().describe('Path to crash-lab.config.mjs (relative to cwd)'),
+        configPath: z
+          .string()
+          .describe(
+            'Path to a crash-lab config (.mjs, .js, .cjs, .ts, .mts or .cts), relative to cwd',
+          ),
         cwd: z
           .string()
           .optional()

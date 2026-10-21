@@ -59,7 +59,7 @@ Paste [`docs/AGENTS-snippet.md`](docs/AGENTS-snippet.md) into `AGENTS.md` / `CLA
 
 ## Safety
 
-`run_crash_lab` imports your `crash-lab.config.mjs` (it is code, like any config file) and sends requests to
+`run_crash_lab` imports your crash-lab config (`.mjs`/`.js`/`.cjs`, or `.ts`/`.mts`/`.cts` via the bundled jiti) (it is code, like any config file) and sends requests to
 its `target`. Point configs at a local server and a **test** database and secret only. The skill tells
 agents never to use production URLs or live secrets.
 

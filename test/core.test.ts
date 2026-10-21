@@ -58,9 +58,11 @@ describe('runFromConfig', () => {
     await expect(
       runFromConfig({ configPath: 'invalid.config.mjs', cwd: fixtures }),
     ).rejects.toThrow(/must export default \{ target, secret, event \}/);
-    await expect(runFromConfig({ configPath: 'cfg.ts', cwd: fixtures })).rejects.toThrow(
-      /\.ts configs/,
-    );
+  });
+
+  it('loads TypeScript configs like the webhook-crash-lab CLI does', async () => {
+    const summary = await runFromConfig({ configPath: 'fixed.config.ts', cwd: fixtures });
+    expect(summary.ok).toBe(true);
   });
 });
 
