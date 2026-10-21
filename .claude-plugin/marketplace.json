@@ -1,0 +1,17 @@
+{
+  "name": "webhook-crash-lab",
+  "owner": {
+    "name": "Krrish Kumar",
+    "url": "https://github.com/Krrishkumar125"
+  },
+  "metadata": {
+    "description": "Webhook reliability tools for coding agents: run webhook-crash-lab, fix, re-run."
+  },
+  "plugins": [
+    {
+      "name": "webhook-crash-lab",
+      "source": "./",
+      "description": "Test webhook handlers against duplicate, concurrent, out-of-order and forged deliveries, then fix and re-run until they pass."
+    }
+  ]
+}

@@ -1,0 +1,80 @@
+{
+  "name": "webhook-crash-lab-mcp",
+  "version": "0.1.0",
+  "description": "MCP server (plus Claude Code plugin and Codex skill) that lets coding agents run webhook-crash-lab, read structured failures with fix hints, and re-run until the webhook handler survives retries, duplicates and forged signatures.",
+  "license": "MIT",
+  "author": "Krrish Kumar (https://github.com/Krrishkumar125)",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Krrishkumar125/webhook-crash-lab-mcp.git"
+  },
+  "homepage": "https://github.com/Krrishkumar125/webhook-crash-lab-mcp#readme",
+  "bugs": "https://github.com/Krrishkumar125/webhook-crash-lab-mcp/issues",
+  "keywords": [
+    "mcp",
+    "model-context-protocol",
+    "claude-code",
+    "codex",
+    "agent-skills",
+    "webhook",
+    "stripe",
+    "idempotency",
+    "testing"
+  ],
+  "type": "module",
+  "bin": {
+    "webhook-crash-lab-mcp": "./dist/bin.js"
+  },
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "default": "./dist/index.js"
+    },
+    "./package.json": "./package.json"
+  },
+  "files": [
+    "dist",
+    "skills",
+    ".claude-plugin",
+    ".mcp.json",
+    ".agents",
+    "docs",
+    "CHANGELOG.md"
+  ],
+  "engines": {
+    "node": ">=20"
+  },
+  "sideEffects": false,
+  "scripts": {
+    "build": "tsup",
+    "typecheck": "tsc --noEmit",
+    "lint": "eslint . && prettier --check .",
+    "format": "prettier --write .",
+    "test": "vitest run",
+    "test:coverage": "vitest run --coverage",
+    "check:exports": "publint && attw --pack . --profile esm-only",
+    "smoke": "npm run build && node scripts/smoke.mjs",
+    "prepublishOnly": "npm run lint && npm run typecheck && npm test && npm run build"
+  },
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "^1.32.1",
+    "webhook-crash-lab": "^0.2.0",
+    "zod": "^4.6.7"
+  },
+  "devDependencies": {
+    "@arethetypeswrong/cli": "^0.18.5",
+    "@eslint/js": "^10.0.1",
+    "@types/node": "^20.19.43",
+    "@vitest/coverage-v8": "^4.1.12",
+    "eslint": "^10.13.0",
+    "globals": "^17.13.0",
+    "prettier": "^3.9.10",
+    "publint": "^0.3.25",
+    "tsup": "^8.5.1",
+    "typescript": "~5.9",
+    "typescript-eslint": "^8.72.0",
+    "vitest": "^4.1.12"
+  }
+}
