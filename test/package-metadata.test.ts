@@ -20,3 +20,15 @@ describe('npm metadata', () => {
     expect(server.packages[0].identifier).toBe(pkg.name);
   });
 });
+
+describe('README install badges', () => {
+  it('VS Code and Cursor deeplinks install the same server as .mcp.json', () => {
+    const readme = readFileSync(new URL('../README.md', import.meta.url), 'utf8');
+    const mcp = JSON.parse(readFileSync(new URL('../.mcp.json', import.meta.url), 'utf8'));
+    const expected = mcp.mcpServers['webhook-crash-lab'];
+    const vs = /mcp\/install\?name=webhook-crash-lab&config=([^)\s]+)/.exec(readme)?.[1] ?? '';
+    const cur = /install-mcp\?name=webhook-crash-lab&config=([^)\s]+)/.exec(readme)?.[1] ?? '';
+    expect(JSON.parse(decodeURIComponent(vs))).toEqual(expected);
+    expect(JSON.parse(Buffer.from(cur, 'base64').toString('utf8'))).toEqual(expected);
+  });
+});

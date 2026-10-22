@@ -1,6 +1,8 @@
 # webhook-crash-lab-mcp
 
 [![CI](https://github.com/Krrishkumar125/webhook-crash-lab-mcp/actions/workflows/ci.yml/badge.svg)](https://github.com/Krrishkumar125/webhook-crash-lab-mcp/actions/workflows/ci.yml)
+[![npm](https://img.shields.io/npm/v/webhook-crash-lab-mcp)](https://www.npmjs.com/package/webhook-crash-lab-mcp)
+[![downloads](https://img.shields.io/npm/dm/webhook-crash-lab-mcp)](https://www.npmjs.com/package/webhook-crash-lab-mcp)
 
 Coding agents write webhook handlers that work for one test event and break in production on
 retries, duplicates and forged signatures. This package gives them a loop: **run
@@ -27,6 +29,9 @@ Every result comes back as text for the model and `structuredContent` (with an `
 Errors such as a missing or invalid config come back as `isError` results, not crashes.
 
 ## 60-second start
+
+[![Install in VS Code](https://img.shields.io/badge/VS_Code-Install_MCP_server-0098FF?logo=visualstudiocode)](https://insiders.vscode.dev/redirect/mcp/install?name=webhook-crash-lab&config=%7B%22command%22%3A%22npx%22%2C%22args%22%3A%5B%22-y%22%2C%22webhook-crash-lab-mcp%22%5D%7D)
+[![Install in Cursor](https://cursor.com/deeplink/mcp-install-dark.svg)](https://cursor.com/en/install-mcp?name=webhook-crash-lab&config=eyJjb21tYW5kIjoibnB4IiwiYXJncyI6WyIteSIsIndlYmhvb2stY3Jhc2gtbGFiLW1jcCJdfQ==)
 
 **Claude Code**
 
