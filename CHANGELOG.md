@@ -1,5 +1,10 @@
 # Changelog
 
+## 0.2.3 (2026-10-23)
+
+- npm metadata: shorter description, focused keywords, homepage/bugs links; README links sibling packages.
+- Adds `mcpName` and `server.json` for the official MCP Registry.
+
 ## 0.2.0 (2026-10-22)
 
 - `run_crash_lab` accepts TypeScript configs (`.ts`/`.mts`/`.cts`) by delegating config loading to
