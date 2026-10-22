@@ -10,7 +10,7 @@ import {
   type Summary,
 } from './core.js';
 
-export const VERSION = '0.2.1';
+export const VERSION = '0.2.2';
 
 const summaryShape = {
   name: z.string(),
