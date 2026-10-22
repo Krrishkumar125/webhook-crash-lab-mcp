@@ -1,0 +1,21 @@
+{
+  "$schema": "https://static.modelcontextprotocol.io/schemas/2025-12-11/server.schema.json",
+  "name": "io.github.Krrishkumar125/webhook-crash-lab-mcp",
+  "title": "Webhook Crash Lab",
+  "description": "Lets coding agents crash-test webhook handlers and re-run until they survive retries.",
+  "repository": {
+    "url": "https://github.com/Krrishkumar125/webhook-crash-lab-mcp",
+    "source": "github"
+  },
+  "version": "0.2.3",
+  "packages": [
+    {
+      "registryType": "npm",
+      "identifier": "webhook-crash-lab-mcp",
+      "version": "0.2.3",
+      "transport": {
+        "type": "stdio"
+      }
+    }
+  ]
+}

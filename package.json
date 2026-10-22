@@ -1,7 +1,8 @@
 {
   "name": "webhook-crash-lab-mcp",
   "version": "0.2.2",
-  "description": "MCP server (plus Claude Code plugin and Codex skill) that lets coding agents run webhook-crash-lab, read structured failures with fix hints, and re-run until the webhook handler survives retries, duplicates and forged signatures.",
+  "mcpName": "io.github.Krrishkumar125/webhook-crash-lab-mcp",
+  "description": "MCP server that lets coding agents crash-test webhook handlers and re-run until they survive retries.",
   "license": "MIT",
   "author": "Krrish Kumar (https://github.com/Krrishkumar125)",
   "repository": {
@@ -9,13 +10,16 @@
     "url": "git+https://github.com/Krrishkumar125/webhook-crash-lab-mcp.git"
   },
   "homepage": "https://github.com/Krrishkumar125/webhook-crash-lab-mcp#readme",
-  "bugs": "https://github.com/Krrishkumar125/webhook-crash-lab-mcp/issues",
+  "bugs": {
+    "url": "https://github.com/Krrishkumar125/webhook-crash-lab-mcp/issues"
+  },
   "keywords": [
     "mcp",
+    "mcp-server",
     "model-context-protocol",
     "claude-code",
     "codex",
-    "agent-skills",
+    "ai-agents",
     "webhook",
     "stripe",
     "idempotency",
