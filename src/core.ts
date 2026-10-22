@@ -71,6 +71,10 @@ export function summarize(result: CrashLabResult, reportPath?: string): Summary 
       'Change the webhook handler (not the test config), then re-run the same tool with the same arguments. Stop when ok is true.',
       'Static checks for the same bugs: eslint-plugin-webhook-safety and eslint-plugin-bullmq.',
     );
+  } else if (notTested.length) {
+    nextSteps.push(
+      'No failures among the tested scenarios, but coverage is incomplete. Enable the untested scenarios below before relying on this result.',
+    );
   } else {
     nextSteps.push(
       'All scenarios pass. Keep `npx webhook-crash-lab run` in CI so this stays true.',

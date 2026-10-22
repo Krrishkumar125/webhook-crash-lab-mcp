@@ -120,6 +120,8 @@ describe('summarize / listScenarios', () => {
     });
     expect(s.notTested).toEqual(['out-of-order']);
     expect(s.nextSteps.join(' ')).toMatch(/adapter|sequence/);
+    expect(s.nextSteps.join(' ')).not.toMatch(/All scenarios pass/);
+    expect(s.nextSteps[0]).toMatch(/No failures among the tested scenarios/);
   });
 });
 
