@@ -2,7 +2,7 @@
   "mcpServers": {
     "webhook-crash-lab": {
       "command": "npx",
-      "args": ["-y", "webhook-crash-lab-mcp@0.2.3"]
+      "args": ["-y", "webhook-crash-lab-mcp@0.2.4"]
     }
   }
 }

@@ -1,6 +1,6 @@
 {
   "name": "webhook-crash-lab-mcp",
-  "version": "0.2.3",
+  "version": "0.2.4",
   "mcpName": "io.github.Krrishkumar125/webhook-crash-lab-mcp",
   "description": "MCP server that lets coding agents crash-test webhook handlers and re-run until they survive retries.",
   "license": "MIT",

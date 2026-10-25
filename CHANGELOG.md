@@ -1,5 +1,9 @@
 # Changelog
 
+## 0.2.4 (2026-10-25)
+
+- README, VS Code/Cursor install links and `.mcp.json` pin `npx` to an exact version; README explains how to update. A test keeps the pins equal to the package version.
+
 ## 0.2.3 (2026-10-23)
 
 - npm metadata: shorter description, focused keywords, homepage/bugs links; README links sibling packages.

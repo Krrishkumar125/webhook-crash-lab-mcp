@@ -30,13 +30,13 @@ Errors such as a missing or invalid config come back as `isError` results, not c
 
 ## 60-second start
 
-[![Install in VS Code](https://img.shields.io/badge/VS_Code-Install_MCP_server-0098FF?logo=visualstudiocode)](https://insiders.vscode.dev/redirect/mcp/install?name=webhook-crash-lab&config=%7B%22command%22%3A%22npx%22%2C%22args%22%3A%5B%22-y%22%2C%22webhook-crash-lab-mcp%400.2.3%22%5D%7D)
-[![Install in Cursor](https://cursor.com/deeplink/mcp-install-dark.svg)](https://cursor.com/en/install-mcp?name=webhook-crash-lab&config=eyJjb21tYW5kIjoibnB4IiwiYXJncyI6WyIteSIsIndlYmhvb2stY3Jhc2gtbGFiLW1jcEAwLjIuMyJdfQ==)
+[![Install in VS Code](https://img.shields.io/badge/VS_Code-Install_MCP_server-0098FF?logo=visualstudiocode)](https://insiders.vscode.dev/redirect/mcp/install?name=webhook-crash-lab&config=%7B%22command%22%3A%22npx%22%2C%22args%22%3A%5B%22-y%22%2C%22webhook-crash-lab-mcp%400.2.4%22%5D%7D)
+[![Install in Cursor](https://cursor.com/deeplink/mcp-install-dark.svg)](https://cursor.com/en/install-mcp?name=webhook-crash-lab&config=eyJjb21tYW5kIjoibnB4IiwiYXJncyI6WyIteSIsIndlYmhvb2stY3Jhc2gtbGFiLW1jcEAwLjIuNCJdfQ==)
 
 **Claude Code**
 
 ```sh
-claude mcp add webhook-crash-lab -- npx -y webhook-crash-lab-mcp@0.2.3
+claude mcp add webhook-crash-lab -- npx -y webhook-crash-lab-mcp@0.2.4
 # or the full plugin (MCP server + skill):
 #   /plugin marketplace add Krrishkumar125/webhook-crash-lab-mcp
 #   /plugin install webhook-crash-lab@webhook-crash-lab
@@ -45,7 +45,7 @@ claude mcp add webhook-crash-lab -- npx -y webhook-crash-lab-mcp@0.2.3
 **Codex**
 
 ```sh
-codex mcp add webhook-crash-lab -- npx -y webhook-crash-lab-mcp@0.2.3
+codex mcp add webhook-crash-lab -- npx -y webhook-crash-lab-mcp@0.2.4
 mkdir -p .agents/skills && cp -r node_modules/webhook-crash-lab-mcp/.agents/skills/webhook-crash-lab .agents/skills/
 ```
 
@@ -54,12 +54,12 @@ mkdir -p .agents/skills && cp -r node_modules/webhook-crash-lab-mcp/.agents/skil
 ```json
 {
   "mcpServers": {
-    "webhook-crash-lab": { "command": "npx", "args": ["-y", "webhook-crash-lab-mcp@0.2.3"] }
+    "webhook-crash-lab": { "command": "npx", "args": ["-y", "webhook-crash-lab-mcp@0.2.4"] }
   }
 }
 ```
 
-The examples pin the version so `npx` never silently runs a newer release. To update, check the latest with `npm view webhook-crash-lab-mcp version`, read the [releases](https://github.com/Krrishkumar125/webhook-crash-lab-mcp/releases), then change `@0.2.3` to the new version in your MCP config and restart the client.
+The examples pin the version so `npx` never silently runs a newer release. To update, check the latest with `npm view webhook-crash-lab-mcp version`, read the [releases](https://github.com/Krrishkumar125/webhook-crash-lab-mcp/releases), then change `@0.2.4` to the new version in your MCP config and restart the client.
 
 Then ask: _"Run the webhook crash lab demo"_, or _"Make my Stripe webhook pass webhook-crash-lab"_.
 Paste [`docs/AGENTS-snippet.md`](docs/AGENTS-snippet.md) into `AGENTS.md` / `CLAUDE.md` to make it a standing rule.
