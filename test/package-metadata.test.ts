@@ -32,3 +32,15 @@ describe('README install badges', () => {
     expect(JSON.parse(Buffer.from(cur, 'base64').toString('utf8'))).toEqual(expected);
   });
 });
+
+describe('README install examples', () => {
+  it('pin npx to the current package version', () => {
+    const readme = readFileSync(new URL('../README.md', import.meta.url), 'utf8');
+    const decoded =
+      readme.replace(/config=([A-Za-z0-9+/=]+)\)/g, (_, b) => Buffer.from(b, 'base64').toString()) +
+      decodeURIComponent(readme);
+    const npx = [...decoded.matchAll(/"-y",\s*"([^"]+)"|npx -y (\S+)/g)].map((m) => m[1] ?? m[2]);
+    expect(npx.length).toBeGreaterThanOrEqual(5);
+    for (const spec of npx) expect(spec).toBe(`webhook-crash-lab-mcp@${pkg.version}`);
+  });
+});
