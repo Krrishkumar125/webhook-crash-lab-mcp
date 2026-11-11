@@ -1,5 +1,6 @@
 import { readFileSync } from 'node:fs';
 import { describe, expect, it } from 'vitest';
+import { VERSION } from '../src/server.js';
 
 const pkg = JSON.parse(readFileSync(new URL('../package.json', import.meta.url), 'utf8'));
 
@@ -18,6 +19,16 @@ describe('npm metadata', () => {
     expect(server.name).toBe(pkg.mcpName);
     expect(server.description.length).toBeLessThanOrEqual(100);
     expect(server.packages[0].identifier).toBe(pkg.name);
+    expect(server.version).toBe(pkg.version);
+    expect(server.packages[0].version).toBe(pkg.version);
+  });
+
+  it('reports the package version to MCP clients and in the Claude plugin', () => {
+    const plugin = JSON.parse(
+      readFileSync(new URL('../.claude-plugin/plugin.json', import.meta.url), 'utf8'),
+    );
+    expect(VERSION).toBe(pkg.version);
+    expect(plugin.version).toBe(pkg.version);
   });
 });
 
