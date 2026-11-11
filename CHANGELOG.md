@@ -1,5 +1,11 @@
 # Changelog
 
+## 0.2.5 (2026-11-11)
+
+- The server now reports its real version to MCP clients. It was stuck at 0.2.2 since that release. The Claude plugin manifest version is fixed too, and a test keeps both equal to the package version.
+- Updates @modelcontextprotocol/sdk to 1.32.2 and webhook-crash-lab to 0.3.3 in the lockfile. This also pulls body-parser 2.4.0, which fixes GHSA-27r3-jxmh-p828 (DoS through trailing bytes after a compressed body).
+- README, install links, `.mcp.json` and `server.json` point at 0.2.5.
+
 ## 0.2.4 (2026-10-25)
 
 - README, VS Code/Cursor install links and `.mcp.json` pin `npx` to an exact version; README explains how to update. A test keeps the pins equal to the package version.
