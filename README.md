@@ -3,6 +3,7 @@
 [![CI](https://github.com/Krrishkumar125/webhook-crash-lab-mcp/actions/workflows/ci.yml/badge.svg)](https://github.com/Krrishkumar125/webhook-crash-lab-mcp/actions/workflows/ci.yml)
 [![npm](https://img.shields.io/npm/v/webhook-crash-lab-mcp)](https://www.npmjs.com/package/webhook-crash-lab-mcp)
 [![downloads](https://img.shields.io/npm/dm/webhook-crash-lab-mcp)](https://www.npmjs.com/package/webhook-crash-lab-mcp)
+[![Krrishkumar125/webhook-crash-lab-mcp MCP server](https://glama.ai/mcp/servers/Krrishkumar125/webhook-crash-lab-mcp/badges/score.svg)](https://glama.ai/mcp/servers/Krrishkumar125/webhook-crash-lab-mcp)
 
 Coding agents write webhook handlers that work for one test event and break in production on
 retries, duplicates and forged signatures. This package gives them a loop: **run
